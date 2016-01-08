@@ -1,0 +1,522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		167519BB1C3F46C90053652F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 167519BA1C3F46C90053652F /* main.m */; };
+		167519BE1C3F46C90053652F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 167519BD1C3F46C90053652F /* AppDelegate.m */; };
+		167519C11C3F46C90053652F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 167519C01C3F46C90053652F /* ViewController.m */; };
+		167519C41C3F46C90053652F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 167519C21C3F46C90053652F /* Main.storyboard */; };
+		167519C61C3F46C90053652F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 167519C51C3F46C90053652F /* Assets.xcassets */; };
+		167519C91C3F46C90053652F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 167519C71C3F46C90053652F /* LaunchScreen.storyboard */; };
+		167519D41C3F46C90053652F /* ZSJ_PaySDKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 167519D31C3F46C90053652F /* ZSJ_PaySDKTests.m */; };
+		167519DF1C3F46C90053652F /* ZSJ_PaySDKUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 167519DE1C3F46C90053652F /* ZSJ_PaySDKUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		167519D01C3F46C90053652F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 167519AE1C3F46C90053652F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 167519B51C3F46C90053652F;
+			remoteInfo = ZSJ_PaySDK;
+		};
+		167519DB1C3F46C90053652F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 167519AE1C3F46C90053652F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 167519B51C3F46C90053652F;
+			remoteInfo = ZSJ_PaySDK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		167519B61C3F46C90053652F /* ZSJ_PaySDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZSJ_PaySDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		167519BA1C3F46C90053652F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		167519BC1C3F46C90053652F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		167519BD1C3F46C90053652F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		167519BF1C3F46C90053652F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		167519C01C3F46C90053652F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		167519C31C3F46C90053652F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		167519C51C3F46C90053652F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		167519C81C3F46C90053652F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		167519CA1C3F46C90053652F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		167519CF1C3F46C90053652F /* ZSJ_PaySDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZSJ_PaySDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		167519D31C3F46C90053652F /* ZSJ_PaySDKTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZSJ_PaySDKTests.m; sourceTree = "<group>"; };
+		167519D51C3F46C90053652F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		167519DA1C3F46C90053652F /* ZSJ_PaySDKUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZSJ_PaySDKUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		167519DE1C3F46C90053652F /* ZSJ_PaySDKUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZSJ_PaySDKUITests.m; sourceTree = "<group>"; };
+		167519E01C3F46C90053652F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		167519B31C3F46C90053652F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		167519CC1C3F46C90053652F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		167519D71C3F46C90053652F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		167519AD1C3F46C90053652F = {
+			isa = PBXGroup;
+			children = (
+				167519B81C3F46C90053652F /* ZSJ_PaySDK */,
+				167519D21C3F46C90053652F /* ZSJ_PaySDKTests */,
+				167519DD1C3F46C90053652F /* ZSJ_PaySDKUITests */,
+				167519B71C3F46C90053652F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		167519B71C3F46C90053652F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				167519B61C3F46C90053652F /* ZSJ_PaySDK.app */,
+				167519CF1C3F46C90053652F /* ZSJ_PaySDKTests.xctest */,
+				167519DA1C3F46C90053652F /* ZSJ_PaySDKUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		167519B81C3F46C90053652F /* ZSJ_PaySDK */ = {
+			isa = PBXGroup;
+			children = (
+				167519BC1C3F46C90053652F /* AppDelegate.h */,
+				167519BD1C3F46C90053652F /* AppDelegate.m */,
+				167519BF1C3F46C90053652F /* ViewController.h */,
+				167519C01C3F46C90053652F /* ViewController.m */,
+				167519C21C3F46C90053652F /* Main.storyboard */,
+				167519C51C3F46C90053652F /* Assets.xcassets */,
+				167519C71C3F46C90053652F /* LaunchScreen.storyboard */,
+				167519CA1C3F46C90053652F /* Info.plist */,
+				167519B91C3F46C90053652F /* Supporting Files */,
+			);
+			path = ZSJ_PaySDK;
+			sourceTree = "<group>";
+		};
+		167519B91C3F46C90053652F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				167519BA1C3F46C90053652F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		167519D21C3F46C90053652F /* ZSJ_PaySDKTests */ = {
+			isa = PBXGroup;
+			children = (
+				167519D31C3F46C90053652F /* ZSJ_PaySDKTests.m */,
+				167519D51C3F46C90053652F /* Info.plist */,
+			);
+			path = ZSJ_PaySDKTests;
+			sourceTree = "<group>";
+		};
+		167519DD1C3F46C90053652F /* ZSJ_PaySDKUITests */ = {
+			isa = PBXGroup;
+			children = (
+				167519DE1C3F46C90053652F /* ZSJ_PaySDKUITests.m */,
+				167519E01C3F46C90053652F /* Info.plist */,
+			);
+			path = ZSJ_PaySDKUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		167519B51C3F46C90053652F /* ZSJ_PaySDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 167519E31C3F46C90053652F /* Build configuration list for PBXNativeTarget "ZSJ_PaySDK" */;
+			buildPhases = (
+				167519B21C3F46C90053652F /* Sources */,
+				167519B31C3F46C90053652F /* Frameworks */,
+				167519B41C3F46C90053652F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZSJ_PaySDK;
+			productName = ZSJ_PaySDK;
+			productReference = 167519B61C3F46C90053652F /* ZSJ_PaySDK.app */;
+			productType = "com.apple.product-type.application";
+		};
+		167519CE1C3F46C90053652F /* ZSJ_PaySDKTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 167519E61C3F46C90053652F /* Build configuration list for PBXNativeTarget "ZSJ_PaySDKTests" */;
+			buildPhases = (
+				167519CB1C3F46C90053652F /* Sources */,
+				167519CC1C3F46C90053652F /* Frameworks */,
+				167519CD1C3F46C90053652F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				167519D11C3F46C90053652F /* PBXTargetDependency */,
+			);
+			name = ZSJ_PaySDKTests;
+			productName = ZSJ_PaySDKTests;
+			productReference = 167519CF1C3F46C90053652F /* ZSJ_PaySDKTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		167519D91C3F46C90053652F /* ZSJ_PaySDKUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 167519E91C3F46C90053652F /* Build configuration list for PBXNativeTarget "ZSJ_PaySDKUITests" */;
+			buildPhases = (
+				167519D61C3F46C90053652F /* Sources */,
+				167519D71C3F46C90053652F /* Frameworks */,
+				167519D81C3F46C90053652F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				167519DC1C3F46C90053652F /* PBXTargetDependency */,
+			);
+			name = ZSJ_PaySDKUITests;
+			productName = ZSJ_PaySDKUITests;
+			productReference = 167519DA1C3F46C90053652F /* ZSJ_PaySDKUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		167519AE1C3F46C90053652F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "周双建";
+				TargetAttributes = {
+					167519B51C3F46C90053652F = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = YY9THQMRZF;
+					};
+					167519CE1C3F46C90053652F = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = YY9THQMRZF;
+						TestTargetID = 167519B51C3F46C90053652F;
+					};
+					167519D91C3F46C90053652F = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = YY9THQMRZF;
+						TestTargetID = 167519B51C3F46C90053652F;
+					};
+				};
+			};
+			buildConfigurationList = 167519B11C3F46C90053652F /* Build configuration list for PBXProject "ZSJ_PaySDK" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 167519AD1C3F46C90053652F;
+			productRefGroup = 167519B71C3F46C90053652F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				167519B51C3F46C90053652F /* ZSJ_PaySDK */,
+				167519CE1C3F46C90053652F /* ZSJ_PaySDKTests */,
+				167519D91C3F46C90053652F /* ZSJ_PaySDKUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		167519B41C3F46C90053652F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				167519C91C3F46C90053652F /* LaunchScreen.storyboard in Resources */,
+				167519C61C3F46C90053652F /* Assets.xcassets in Resources */,
+				167519C41C3F46C90053652F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		167519CD1C3F46C90053652F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		167519D81C3F46C90053652F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		167519B21C3F46C90053652F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				167519C11C3F46C90053652F /* ViewController.m in Sources */,
+				167519BE1C3F46C90053652F /* AppDelegate.m in Sources */,
+				167519BB1C3F46C90053652F /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		167519CB1C3F46C90053652F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				167519D41C3F46C90053652F /* ZSJ_PaySDKTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		167519D61C3F46C90053652F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				167519DF1C3F46C90053652F /* ZSJ_PaySDKUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		167519D11C3F46C90053652F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 167519B51C3F46C90053652F /* ZSJ_PaySDK */;
+			targetProxy = 167519D01C3F46C90053652F /* PBXContainerItemProxy */;
+		};
+		167519DC1C3F46C90053652F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 167519B51C3F46C90053652F /* ZSJ_PaySDK */;
+			targetProxy = 167519DB1C3F46C90053652F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		167519C21C3F46C90053652F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				167519C31C3F46C90053652F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		167519C71C3F46C90053652F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				167519C81C3F46C90053652F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		167519E11C3F46C90053652F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		167519E21C3F46C90053652F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		167519E41C3F46C90053652F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ZSJ_PaySDK/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zsj.ZSJ-PaySDK";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		167519E51C3F46C90053652F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ZSJ_PaySDK/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zsj.ZSJ-PaySDK";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		167519E71C3F46C90053652F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ZSJ_PaySDKTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zsj.ZSJ-PaySDKTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZSJ_PaySDK.app/ZSJ_PaySDK";
+			};
+			name = Debug;
+		};
+		167519E81C3F46C90053652F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ZSJ_PaySDKTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zsj.ZSJ-PaySDKTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZSJ_PaySDK.app/ZSJ_PaySDK";
+			};
+			name = Release;
+		};
+		167519EA1C3F46C90053652F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ZSJ_PaySDKUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zsj.ZSJ-PaySDKUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ZSJ_PaySDK;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		167519EB1C3F46C90053652F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ZSJ_PaySDKUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zsj.ZSJ-PaySDKUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ZSJ_PaySDK;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		167519B11C3F46C90053652F /* Build configuration list for PBXProject "ZSJ_PaySDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				167519E11C3F46C90053652F /* Debug */,
+				167519E21C3F46C90053652F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		167519E31C3F46C90053652F /* Build configuration list for PBXNativeTarget "ZSJ_PaySDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				167519E41C3F46C90053652F /* Debug */,
+				167519E51C3F46C90053652F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		167519E61C3F46C90053652F /* Build configuration list for PBXNativeTarget "ZSJ_PaySDKTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				167519E71C3F46C90053652F /* Debug */,
+				167519E81C3F46C90053652F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		167519E91C3F46C90053652F /* Build configuration list for PBXNativeTarget "ZSJ_PaySDKUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				167519EA1C3F46C90053652F /* Debug */,
+				167519EB1C3F46C90053652F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 167519AE1C3F46C90053652F /* Project object */;
+}
