@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
-
+#import <AlipaySDK/AlipaySDK.h>
+#import "ViewController.h"
+#import "WXApi.h"
 @interface AppDelegate ()
 
 @end
@@ -16,12 +18,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    ViewController * BN = [[ViewController alloc]init];
+    self.window.rootViewController = BN;
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
+     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 }
 
@@ -41,5 +47,47 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    
+    //跳转支付宝钱包进行支付，处理支付结果
+    [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+        NSLog(@"result2343 = %@",resultDic);
+    }];
+    
+    return YES;
+}
+-(void) onResp:(BaseResp*)resp
+
+{
+    NSString *strMsg = [NSString stringWithFormat:@"errcode:%d", resp.errCode];
+    NSString *strTitle;
+    NSLog(@"获取prepayid失败！\n%@",strMsg);
+    if([resp isKindOfClass:[SendMessageToWXResp class]])
+    {
+        strTitle = [NSString stringWithFormat:@"发送媒体消息结果"];
+    }
+    if([resp isKindOfClass:[PayResp class]]){
+        //支付返回结果，实际支付结果需要去微信服务器端查询
+        strTitle = [NSString stringWithFormat:@"支付结果"];
+        
+        switch (resp.errCode) {
+            case WXSuccess:
+            {
+                
+             }
+                 break;
+                
+            default:
+            {
+                
+            }
+                 break;
+        }
+    }
+}
+
 
 @end
