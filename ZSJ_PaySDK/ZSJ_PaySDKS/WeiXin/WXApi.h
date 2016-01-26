@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "WXApiObject.h"
-
+#import <UIKit/UIKit.h>
 
 #pragma mark - WXApiDelegate
 /*! @brief 接收并处理来自微信终端程序的事件消息
@@ -152,6 +152,4 @@
  * @return 成功返回YES，失败返回NO。
  */
 +(BOOL) sendResp:(BaseResp*)resp;
-
-
 @end

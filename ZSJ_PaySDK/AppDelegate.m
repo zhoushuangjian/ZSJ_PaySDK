@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import <AlipaySDK/AlipaySDK.h>
-#import "ViewController.h"
+#import "ZSJ_PayViewController.h"
 #import "WXApi.h"
 @interface AppDelegate ()
 
@@ -19,8 +19,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    ViewController * BN = [[ViewController alloc]init];
-    self.window.rootViewController = BN;
+     ZSJ_PayViewController * ZSJ_PayViewC = [[ZSJ_PayViewController alloc]init];
+    self.window.rootViewController = ZSJ_PayViewC;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

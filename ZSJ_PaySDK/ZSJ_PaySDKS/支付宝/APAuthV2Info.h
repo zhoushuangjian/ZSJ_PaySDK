@@ -1,9 +1,11 @@
 //
 //  APAuthV2Info.h
-//  AliSDKDemo
+//  ZSJ_PaySDK
 //
-//  Created by 方彬 on 12/25/14.
-//  Copyright (c) 2014 Alipay.com. All rights reserved.
+//  Created by 周双建 on 16/1/8.
+//  Copyright © 2016年 周双建. All rights reserved.
+//
+
 //
 
 #import <Foundation/Foundation.h>

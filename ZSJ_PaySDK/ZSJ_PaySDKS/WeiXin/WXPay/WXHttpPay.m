@@ -11,34 +11,7 @@
 #import "WXEncrypt.h"
 #import "WXApi.h"
 @implementation WXHttpPay
-//初始化函数
-+(WXHttpPay*) init:(NSString *)app_id mch_id:(NSString *)mch_id;
-{
-    static WXHttpPay * WX = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        WX = [[[self class] alloc] initWith:app_id mach:mch_id];
-    });
-    return WX;
-    }
--(id)initWith:(NSString*)app_id mach:(NSString*)mach{
-    if ([super init]) {
-        //初始构造函数
-        PayUrl     = @"https://api.mch.weixin.qq.com/pay/unifiedorder";
-        if (debugInfo == nil){
-            debugInfo   = [NSMutableString string];
-        }
-        [debugInfo setString:@""];
-        appid   = app_id;
-        mchid   = mach;
-    }
-    return self;
-}
-//设置商户密钥
--(void) setKey:(NSString *)key
-{
-    spkey  = [NSString stringWithString:key];
-}
+
 //获取debug信息
 -(NSString*) getDebugifo
 {
@@ -73,7 +46,7 @@
     }
     NSLog(@"%@",contentString);
     //添加key字段
-    [contentString appendFormat:@"key=%@", APP_SECRET];
+    [contentString appendFormat:@"key=%@", WeChat_APP_SECRET];
     //得到MD5 sign签名
     NSLog(@"%@",contentString);
 
@@ -103,25 +76,20 @@
 -(NSString *)sendPrepay:(NSMutableDictionary *)prePayParams
 {
     NSString *prepayid = nil;
-    
     //获取提交支付
     NSString *send      = [self genPackage:prePayParams];
     //输出Debug Info
-    [debugInfo appendFormat:@"API链接:%@\n", PayUrl];
     [debugInfo appendFormat:@"发送的xml:%@\n", send];
     //发送请求post xml数据
-    NSData *res = [WXEncrypt httpSend:PayUrl method:@"POST" data:send];
-    
+    NSData *res = [WXEncrypt httpSend:@"https://api.mch.weixin.qq.com/pay/unifiedorder" method:@"POST" data:send];
     //输出Debug Info
     [debugInfo appendFormat:@"服务器返回：\n%@\n\n",[[NSString alloc] initWithData:res encoding:NSUTF8StringEncoding]];
     
     WApiXML *xml  = [[WApiXML alloc]init];
-    
     //开始解析
     [xml StartAnalysisData:res];
     // 获取数据
     NSMutableDictionary *resParams = [xml GetAnalysisData];
-    
     NSLog(@"关键时刻：%@",resParams);
     
     //判断返回
@@ -155,31 +123,41 @@
 -(void)sendPay_demo
 {
     //订单标题，展示给用户
-    NSString *order_name    = @"V3";
+    NSString *order_name    = self.WeChat_productName;
     //订单金额,单位（分）
-    NSString *order_price   = @"1";//1分钱测试
+    NSString *order_price   = self.WeChat_amount;//1分钱测试
     //================================
     //预付单参数订单设置
     //================================
     srand( (unsigned)time(0) );
     NSString *noncestr  = [NSString stringWithFormat:@"%d", rand()];
     NSLog(@"随机数%@",noncestr);
-    NSString *orderno   = [NSString stringWithFormat:@"%ld",time(0)];
     NSMutableDictionary *packageParams = [NSMutableDictionary dictionary];
-    [packageParams setObject: appid             forKey:@"appid"];       //开放平台appid
-    [packageParams setObject: mchid             forKey:@"mch_id"];      //商户号
-    [packageParams setObject: @"APP-001"        forKey:@"device_info"]; //支付设备号或门店号
-    [packageParams setObject: noncestr          forKey:@"nonce_str"];   //随机串
-    [packageParams setObject: @"APP"            forKey:@"trade_type"];  //支付类型，固定为APP
-    [packageParams setObject: order_name        forKey:@"body"];        //订单描述，展示给用户
-    [packageParams setObject: NOTIFY_URL        forKey:@"notify_url"];  //支付结果异步通知
-    [packageParams setObject: orderno           forKey:@"out_trade_no"];//商户订单号
-    [packageParams setObject: @"123.12.12.1231"    forKey:@"spbill_create_ip"];//发器支付的机器ip
-    [packageParams setObject: order_price       forKey:@"total_fee"];       //订单金额，单位为分
+    [packageParams setObject: WeChat_App_ID             forKey:@"appid"];
+    //开放平台appid
+    [packageParams setObject: WeChat_MCH_ID             forKey:@"mch_id"];
+    //商户号
+    [packageParams setObject: @"APP-001"        forKey:@"device_info"];
+    //支付设备号或门店号
+    [packageParams setObject: noncestr          forKey:@"nonce_str"];
+    //随机串
+    [packageParams setObject: @"APP"            forKey:@"trade_type"];
+    //支付类型，固定为APP
+    [packageParams setObject: order_name        forKey:@"body"];
+    //订单描述，展示给用户
+    [packageParams setObject: WeChat_NOTIFY_URL        forKey:@"notify_url"];
+    //支付结果异步通知
+    [packageParams setObject: self.WeChat_tradeNO           forKey:@"out_trade_no"];
+    //商户订单号
+    [packageParams setObject: @"123.12.12.1231"    forKey:@"spbill_create_ip"];
+    //发器支付的机器ip
+    [packageParams setObject: order_price       forKey:@"total_fee"];
+    //订单金额，单位为分
     
     //获取prepayId（预支付交易会话标识）
-    NSString *prePayid;
-    prePayid            = [self sendPrepay:packageParams];
+    NSString *prePayid = nil;
+    //获取第一次签名标志
+    prePayid  = [self sendPrepay:packageParams];
     
     NSLog(@"我的希望：%@",prePayid);
     
@@ -192,13 +170,13 @@
         time(&now);
         time_stamp  = [NSString stringWithFormat:@"%ld", now];
         nonce_str	= [WXEncrypt ZSJ_MD5:noncestr];
-        package         = @"Sign=WXPay";
+        package = @"Sign=WXPay";
         //第二次签名参数列表
         NSMutableDictionary *signParams = [NSMutableDictionary dictionary];
-        [signParams setObject: appid        forKey:@"appid"];
+        [signParams setObject: WeChat_App_ID        forKey:@"appid"];
         [signParams setObject: nonce_str    forKey:@"noncestr"];
         [signParams setObject: package      forKey:@"package"];
-        [signParams setObject: mchid        forKey:@"partnerid"];
+        [signParams setObject: WeChat_MCH_ID        forKey:@"partnerid"];
         [signParams setObject: time_stamp   forKey:@"timestamp"];
         [signParams setObject: prePayid     forKey:@"prepayid"];
         //生成签名
@@ -210,15 +188,15 @@
         NSMutableString *stamp  = [signParams objectForKey:@"timestamp"];
         //返回参数列表
         PayReq* req             = [[PayReq alloc] init];
-        req.openID              = APP_ID;
-        req.partnerId           = MCH_ID;
+        req.openID              = WeChat_App_ID;
+        req.partnerId           = WeChat_MCH_ID;
         req.prepayId            = prePayid;
         req.nonceStr            = nonce_str;
         req.timeStamp           = stamp.intValue;
         req.package             = package;
         req.sign                = [signParams objectForKey:@"sign"];
         [WXApi sendReq:req];
-          NSLog(@"微信支付执行——appid=%@\npartid=%@\nprepayid=%@\nnoncestr=%@\ntimestamp=%ld\npackage=%@\nsign=%@",req.openID,req.partnerId,req.prepayId,req.nonceStr,(long)req.timeStamp,req.package,req.sign );
+        NSLog(@"微信支付执行——appid=%@\npartid=%@\nprepayid=%@\nnoncestr=%@\ntimestamp=%ld\npackage=%@\nsign=%@",req.openID,req.partnerId,req.prepayId,req.nonceStr,(long)req.timeStamp,req.package,req.sign );
         NSLog(@"%d",  [WXApi sendReq:req]);
     }else{
         [debugInfo appendFormat:@"获取prepayid失败！\n"];
